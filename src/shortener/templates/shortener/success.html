@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ object.shortcode }} | {{ block.super }} 
+{% endblock title %}
+{% block styles %}
+<style >
+body {
+      background-color: white;
+      {% if bg_image %}background-image: url({{ bg_image }});{% endif %}
+      background-size: cover;
+
+    }
+h1 {
+    text-align: center;
+    color: paleturquoise;
+    font-family: cursive;
+}
+p {
+    text-align: center;
+}  
+.btn-link {
+      align-items: center;
+      color: #50dfec;
+      text-shadow: none;
+    }
+    .btn-link:hover {
+     align-items: center;
+      color: #000000;
+    }
+.btnn {
+    text-align: center;
+}
+</style>    
+{% endblock styles %}
+{% block content %}
+<div class=''>
+    <h1>Success!</h1>
+
+    <p>{{ object.url }}</p>
+
+    <div class = "btnn">
+    <p><a class='btn btn-link' href='{{ object.get_short_url }}'>{{ object.get_short_url }}</a></p>
+    <a class='btn btn-default'  href='/'>+ New</a>
+</div>  
+</div>
+{% endblock content %}
